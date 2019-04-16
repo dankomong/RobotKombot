@@ -18,6 +18,14 @@ jobs = Job.create!(
   ]
 )
 
+
+
+
+
+
+
+
+
 dan = User.create!(name: "Dan", password_digest: "123")
 
 Character.create!(
@@ -64,3 +72,7 @@ Character.create!(
     }
   ]
 )
+boss1 = Boss.create(name: "Sabrinella", hp: 100, level: 2, physical_damage: 10, magical_damage: 2, armor: 10000, weaknesses: "your mom")
+boss2 = Boss.create(name: "Sabrinas mom", hp: 100, level: 2, physical_damage: 10, magical_damage: 2, armor: 10000, weaknesses: "Sabrina")
+
+battle1 = Battle.create!(name: "Test Battle", victory: "yes", boss_id: 2, character_id: 3)
