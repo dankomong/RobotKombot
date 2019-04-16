@@ -1,0 +1,5 @@
+<h1> Your characters: </h1>
+
+<% @characters.each do |char| %>
+  <%= link_to char.name, characters_path %>
+<% end %>
