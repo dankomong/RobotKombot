@@ -1,5 +1,8 @@
-<h1> Your characters: </h1>
-
-<% @characters.each do |char| %>
-  <%= link_to char.name, characters_path %>
-<% end %>
+<h1 class="text-center"> Your characters: </h1>
+<div class="row">
+  <% @characters.each do |char| %>
+    <div class="col">
+      <%= char.name %>
+    </div>
+  <% end %>
+</div>
