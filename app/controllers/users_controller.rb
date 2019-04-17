@@ -12,7 +12,11 @@ end
 
 def create
   @user  = User.create(user_params)
+  if user.valid?
   redirect_to jobs_path
+else
+  render :new
+end
 end
 
 

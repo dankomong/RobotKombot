@@ -1,0 +1,8 @@
+<h1 class="text-center"> Your characters: </h1>
+<div class="row">
+  <% @characters.each do |char| %>
+    <div class="col">
+      <%= char.name %>
+    </div>
+  <% end %>
+</div>
