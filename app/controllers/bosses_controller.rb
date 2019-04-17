@@ -1,2 +1,18 @@
 class BossesController < ApplicationController
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

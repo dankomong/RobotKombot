@@ -26,7 +26,7 @@ jobs = Job.create!(
 
 
 
-dan = User.create!(name: "Dan", password_digest: "123")
+dan = User.create!(username: "Dan", password_digest: "123")
 
 Character.create!(
   [
