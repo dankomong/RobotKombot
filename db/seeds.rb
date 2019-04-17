@@ -58,6 +58,7 @@ Character.create!(
       magical_damage: 1,
       armor: 4,
       user: dan,
+      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSoBb0m_DErSwVWvEV8azzy7avi-giU9Nu_Ec8yNs8WQDG8F9pPg",
       job: jobs.first
     },
     {
@@ -68,6 +69,7 @@ Character.create!(
       magical_damage: 6,
       armor: 2,
       user: dan,
+      image_url: "https://vignette.wikia.nocookie.net/kidicarus/images/7/73/Uprising_lady_palutena_e3_2011_press_kit.png/revision/latest/scale-to-width-down/300?cb=20160122055951",
       job: jobs.second
     },
     {
@@ -78,7 +80,8 @@ Character.create!(
       magical_damage: 3,
       armor: 3,
       user: dan,
-      job: jobs.fourth
+      image_url: "https://gamepedia.cursecdn.com/zelda_gamepedia_en/thumb/e/e5/OoT_Sheik_Artwork.png/1200px-OoT_Sheik_Artwork.png",
+      job: jobs.third
     },
     {
       name: "Sky Archer",
@@ -87,12 +90,13 @@ Character.create!(
       physical_damage: 4,
       magical_damage: 2,
       armor: 2,
+      image_url: "https://i.dlpng.com/static/png/428884_thumb.png",
       user: dan,
-      job: jobs.third
+      job: jobs.fourth
     }
   ]
 )
-boss1 = Boss.create(name: "Sabrinella", hp: 100, level: 2, physical_damage: 10, magical_damage: 2, armor: 10000, weaknesses: "your mom")
-boss2 = Boss.create(name: "Sabrinas mom", hp: 100, level: 2, physical_damage: 10, magical_damage: 2, armor: 10000, weaknesses: "Sabrina")
+boss1 = Boss.create(name: "Sabrinella", hp: 500, level: 2, physical_damage: 13, magical_damage: 5, armor: 10, weaknesses: "your mom", image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Sephiroth.png/220px-Sephiroth.png")
+# boss2 = Boss.create(name: "Sabrinas mom", hp: 100, level: 2, physical_damage: 10, magical_damage: 2, armor: 10000, weaknesses: "Sabrina")
 
-battle1 = Battle.create!(name: "Test Battle", victory: "yes", boss_id: 2, character_id: 3)
+battle1 = Battle.create!(name: "Test Battle", victory: "yes", boss_id: 1, character_id: 1)

@@ -1,0 +1,45 @@
+<div class="text-center character-show">
+  <h1> <%= @character.name %> </h1>
+  <div class="ui middle aligned animated list">
+    <div class="item">
+      <div class="content">
+        <div class="header">HP</div>
+        <%= @character.hp %>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="header">Physical Damage</div>
+        <%= @character.physical_damage %>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="header">Magical Damage</div>
+        <%= @character.magical_damage %>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="header">Armor</div>
+        <%= @character.armor %>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="header">Job</div>
+        <%= @character.job.name %>
+      </div>
+    </div>
+  </div>
+
+  <button class="ui icon teal button char-btn">
+    <%= link_to "Back to characters", characters_path, :class => "btn-create" %>
+  </button>
+  <button class="ui red button char-btn">
+    <%= link_to "Delete this character", characters_path, :class => "btn-create" %>
+  </button>
+  <button class="ui blue button">
+    <%= link_to "Start Battle", characters_path, :class => "btn-create" %>
+  </button>
+</div>

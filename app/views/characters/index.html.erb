@@ -2,7 +2,59 @@
 <div class="row">
   <% @characters.each do |char| %>
     <div class="col">
-      <%= char.name %>
+      <% if char.job.name == "Warrior" %>
+        <a class="job-link" href="/characters/<%=char.id%>">
+          <div class="image-overlay">
+            <img src= <%= char.image_url %>
+                 alt="warrior_avatar"
+                 class="img-responsive"
+                 height="370"
+                 width="250" />
+             <div class="project-overlay">
+               <div class="text"> <%= char.name %></div>
+             </div>
+          </div>
+        </a>
+        <% elsif char.job.name == "Magician" %>
+          <a class="job-link" href="/characters/<%=char.id%>">
+            <div class="image-overlay">
+              <img src=<%= char.image_url %>
+                   alt="magician_avatar"
+                   class="img-responsive"
+                   height="370"
+                   width="250" />
+               <div class="project-overlay">
+                 <div class="text"> <%= char.name %></div>
+               </div>
+            </div>
+          </a>
+        <% elsif char.job.name == "Assassin" %>
+          <a class="job-link" href="/characters/<%=char.id%>">
+            <div class="image-overlay">
+              <img src=<%= char.image_url %>
+                   alt="assassin_avatar"
+                   class="img-responsive"
+                   height="370"
+                   width="250" />
+               <div class="project-overlay">
+                 <div class="text"> <%= char.name %></div>
+               </div>
+            </div>
+          </a>
+        <% elsif char.job.name == "Archer" %>
+          <a class="job-link" href="/characters/<%=char.id%>">
+            <div class="image-overlay">
+              <img src=<%= char.image_url %>
+                   alt="archer_avatar"
+                   class="img-responsive"
+                   height="370"
+                   width="250" />
+               <div class="project-overlay">
+                 <div class="text"> <%= char.name %></div>
+               </div>
+            </div>
+          </a>
+      <% end %>
     </div>
   <% end %>
 </div>
