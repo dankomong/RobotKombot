@@ -1,0 +1,27 @@
+<div class="text-center stats">
+  <img src=<%= @job.image_url %>
+  alt="warrior_picture"
+  class="img-responsive"
+  height="500"
+  width="350" />
+  <h1> <%= @job.name %> </h1>
+
+
+  <div class="ui list">
+    <div class="item">
+      <div class="header">Description: </div>
+      <%= @job.bio %>
+    </div>
+    <div class="item">
+      <div class="header">Weaknesses: </div>
+      <%= @job.weaknesses %>
+    </div>
+  </div>
+
+
+    <div class="ui button teal" tabindex="0">
+      <div class="visible content">
+        <%= link_to 'Create a character in this class', new_character_path, :class => "btn-create" %>
+      </div>
+    </div>
+  </div>

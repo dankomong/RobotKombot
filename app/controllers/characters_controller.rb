@@ -14,22 +14,22 @@ end
 
 
 def create
-  @character = Character.create(character_params)
-  if character.valid?
+  @character = Character.create(character_params(:name))
+  if @character.valid?
   redirect_to character_path(@character)
 else
   render :new
 end
 end
 
-def update
-  @character.update(character_params)
-  if character.valid?
-  redirect_to character_path(@character)
-else
-  render :edit
-end
-end
+# def update
+#   @character.update(character_params)
+#   if character.valid?
+#   redirect_to character_path(@character)
+# else
+#   render :edit
+# end
+# end
 
 
 
@@ -53,8 +53,10 @@ end
 
 
 
-def character_params
-  params.require(:character).permit(:name, :hp, :level, :physical_damage, :magical_damage, :armor, :user_id, :job_id)
+def character_params(*args)
+  params.require(:character).permit(*args)
 end
+
+
 
 end
