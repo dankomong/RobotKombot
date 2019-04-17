@@ -11,10 +11,30 @@ Character.destroy_all
 
 jobs = Job.create!(
   [
-    {name: "Warrior", bio: "grr", weaknesses: "Assassin"},
-    {name: "Mage", bio: "tacos", weaknesses: "Warrior" },
-    {name: "Archer", bio: "shazaam", weaknesses: "Mage"},
-    {name: "Assassin", bio: "shhhh", weaknesses: "Archer"}
+    {
+      name: "Warrior",
+      bio: "The Warrior is a solid, well-rounded character perfect for players new to RobotKombot. This character excels at defense, with large amounts of health and access to powerful suits of armor. These strengths help keep the Warrior protected when engaged in close-quarters combat against hordes of monsters.",
+      weaknesses: "Assassin",
+      image_url: "https://vignette.wikia.nocookie.net/maplestory/images/e/e7/Artwork_Warrior_%28RED%2C_Male%29.png/revision/latest?cb=20131118150759"
+    },
+    {
+      name: "Magician",
+      bio: "The Magician is one of the four class archetype that other jobs in RobotKombot draw from. They make use of unrivaled magical power to attack foes from a variety of ranges, usually in the interest of backing up comrades and keeping foes from all directions at a safe distance.",
+      weaknesses: "Warrior",
+      image_url: "https://i.pinimg.com/originals/ca/7c/80/ca7c80ff7597b778a7b036018a6ff958.png"
+    },
+    {
+      name: "Assassin",
+      bio: "An assassin is one of the five class archetype that other jobs in MapleStory draw from. They are the fastest short-range attackers in the game, dealing relatively low damage yet many attacks on a foe with daggers, claws and throwing stars.",
+      weaknesses: "Archer",
+      image_url: "https://vignette.wikia.nocookie.net/maplestory/images/e/e7/Artwork_Thief_%28RED%2C_Male%29.png/revision/latest?cb=20131222192024"
+    },
+    {
+      name: "Archer",
+      bio: "Archers are a part of Explorers and are the characters that wield Bows and Crossbows. They use long-range attacks and are capable dealing splash damage. They also have the highest accuracy, thus granting them the ability to fight Bosses earlier than the other classes.",
+      weaknesses: "Magician",
+      image_url: "https://vignette.wikia.nocookie.net/maplestory/images/2/2d/Artwork_Bowman_%28RED%2C_Female%29.png/revision/latest?cb=20130628055327"
+    }
   ]
 )
 
@@ -28,13 +48,13 @@ Character.create!(
       level: 1,
       physical_damage: 5,
       magical_damage: 1,
-      armor: 3,
+      armor: 4,
       user: dan,
       job: jobs.first
     },
     {
       name: "Majestic Mage",
-      hp: 100,
+      hp: 110,
       level: 1,
       physical_damage: 0,
       magical_damage: 6,
@@ -43,24 +63,24 @@ Character.create!(
       job: jobs.second
     },
     {
-      name: "Sky Archer",
-      hp: 100,
-      level: 1,
-      physical_damage: 4,
-      magical_damage: 2,
-      armor: 2,
-      user: dan,
-      job: jobs.third
-    },
-    {
       name: "Silent Assassin",
-      hp: 105,
+      hp: 120,
       level: 1,
       physical_damage: 3,
       magical_damage: 3,
       armor: 3,
       user: dan,
       job: jobs.fourth
+    },
+    {
+      name: "Sky Archer",
+      hp: 95,
+      level: 1,
+      physical_damage: 4,
+      magical_damage: 2,
+      armor: 2,
+      user: dan,
+      job: jobs.third
     }
   ]
 )

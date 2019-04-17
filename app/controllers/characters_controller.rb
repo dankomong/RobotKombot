@@ -3,4 +3,8 @@ class CharactersController < ApplicationController
     @characters = Character.all
   end
 
+  def new
+    @character = Character.new
+  end
+
 end
