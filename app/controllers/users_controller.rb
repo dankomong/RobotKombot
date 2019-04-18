@@ -11,8 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user  = User.create(user_params)
+    @user  = User.create!(user_params)
     if @user.valid?
+      session[:user_id] = @user.id
       redirect_to jobs_path
     else
       render :new
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:username, :password_digest)
+    params.require(:user).permit(:username, :password)
   end
 
 

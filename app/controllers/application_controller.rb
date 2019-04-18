@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :setup_voting_stuff
+  # before_action :setup_voting_stuff
 
   def setup_voting_stuff
     @notification = flash["notification"]

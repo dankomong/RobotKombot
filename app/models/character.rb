@@ -4,7 +4,7 @@ class Character < ApplicationRecord
   has_many :battles
   has_many :bosses, through: :battles
 
-validates :name, presence: true, uniqueness: true
+# validates :name, presence: true, uniqueness: true
 
 
 

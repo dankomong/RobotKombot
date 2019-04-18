@@ -2,6 +2,7 @@
   <%= form_for @character do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.collection_select :job_id, Job.all, :id, :name %>
 
     <%= f.submit %>
   <% end %>

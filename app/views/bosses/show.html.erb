@@ -1,45 +1,45 @@
 <div class="text-center character-show">
-  <h1> <%= @character.name %> </h1>
+  <h1> <%= @boss.name %> </h1>
   <div class="ui middle aligned animated list">
     <div class="item">
       <div class="content">
         <div class="header">HP</div>
-        <%= @character.hp %>
+        <%= @boss.hp %>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="header">Level</div>
+        <%= @boss.level %>
       </div>
     </div>
     <div class="item">
       <div class="content">
         <div class="header">Physical Damage</div>
-        <%= @character.physical_damage %>
+        <%= @boss.physical_damage %>
       </div>
     </div>
     <div class="item">
       <div class="content">
         <div class="header">Magical Damage</div>
-        <%= @character.magical_damage %>
+        <%= @boss.magical_damage %>
       </div>
     </div>
     <div class="item">
       <div class="content">
         <div class="header">Armor</div>
-        <%= @character.armor %>
+        <%= @boss.armor %>
       </div>
     </div>
     <div class="item">
       <div class="content">
-        <div class="header">Job</div>
-        <%= @character.job.name %>
+        <div class="header">Weaknesses</div>
+        <%= @boss.weaknesses %>
       </div>
     </div>
   </div>
 
   <button class="ui icon teal button char-btn">
-    <%= link_to "Back to characters", characters_path, :class => "btn-create" %>
-  </button>
-  <button class="ui orange button char-btn">
-    <%= link_to "Edit this character", characters_path, :class => "btn-create" %>
-  </button>
-  <button class="ui blue button">
-    <%= link_to "Start Battle", characters_path, :class => "btn-create" %>
+    <%= link_to "Back to bosses", bosses_path, :class => "btn-create" %>
   </button>
 </div>
