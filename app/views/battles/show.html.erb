@@ -5,10 +5,12 @@
   height="500"
   width="350" />
   <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-green" style="width:<%= 100 %>%"> 100 %</div>
+    <div class="w3-container w3-green" style="width:<%= @percent1 %>%"> <%= @percent1 %> %</div>
   </div>
   <%= form_tag battle_path(@battle) do %>
-    <input type="hidden" name="percent" value= "<%= @percent %>" />
+    <input type="hidden" name="percent1" value= "<%= @percent1 %>" />
+    <input type="hidden" name="percent2" value= "<%= @percent2 %>" />
+
     <input type="submit" value="Attack" />
   <% end %>
 </div>
@@ -20,6 +22,6 @@
   height="500"
   width="350" />
   <div class="w3-light-grey w3-xlarge">
-    <div class="w3-container w3-green" style="width:<%= @percent %>%"> <%= @percent %>%</div>
+    <div class="w3-container w3-green" style="width:<%= @percent2 %>%"> <%= @percent2 %>%</div>
   </div>
 </div>

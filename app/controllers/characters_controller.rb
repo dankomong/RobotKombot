@@ -13,7 +13,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params(:name, :job_id))
-    @character.user = session[]
+    @character.user_id = session[:user_id]
     @character.update_stats
     if @character.valid?
 

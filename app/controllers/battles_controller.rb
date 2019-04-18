@@ -8,7 +8,8 @@ end
 def show
 
   @battle = Battle.find(params[:id])
-  @percent = "100"
+  @percent1 = "100"
+  @percent2 = "100"
   # @boss = Boss.find(@battle.boss)
   # @character = Character.find(@battle.character.id)
 end
@@ -19,8 +20,12 @@ end
 
 def fight
   @battle = Battle.find(params[:id])
-  @percent = (params[:percent].to_i - rand(1..20)).to_s
-  if @percent.to_i <= 0
+  @character = Character.find(@battle.character_id)
+  @percent1 = (params[:percent1].to_i - rand(1..20)).to_s
+  @percent2 = (params[:percent2].to_i - rand(1..20)).to_s
+  if @percent1.to_i <= 0
+    redirect_to characters_path
+  elsif @percent2.to_i <= 0
     redirect_to characters_path
   else
     render :show
