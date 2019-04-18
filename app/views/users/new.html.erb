@@ -1,11 +1,23 @@
 <div class="text-center">
-  <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+<% if logged_in %>
+<p> You've already signed up! </p>
+<% else %>
+<h1> Sign up </h1>
+<!-- <form class="ui form new-user-form"> -->
+  <%= form_for @user, method: :post, html: {class: "ui form new-user-form"} do |f| %>
+    <div class = "field">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class = "field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
 
-    <%= f.submit %>
+    <%= f.submit  %>
   <% end %>
+  <!-- </form> -->
+  <% end %>
+  <%= link_to "Log in", new_session_path %>
 </div>
