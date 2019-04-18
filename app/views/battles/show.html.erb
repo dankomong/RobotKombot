@@ -28,14 +28,15 @@
     <div class="w3-container w3-green" style="width:<%= @percent2 %>%"> <%= @percent2 %>%</div>
   </div>
 </div>
+
+<div class="text-center">
 <%if @percent1.to_i <= 0 && @percent2.to_i <= 0 %>
-<%= "ISSA TIE" %>
+  <h1><%= "ISSA TIE" %> </h1>
 <% elsif @percent1.to_i <= 0 %>
-<%= "YOU LOST" %>
+  <h1><%= "YOU LOST" %> </h1>
 <% elsif @percent2.to_i <= 0 %>
-<%= "YOU WON!" %>
+  <h1> <%= "YOU WON!" %> </h1>
 <% end %>
 
-
-
 <%= button_to "Back To Your Roster", characters_path, :method => :get %>
+</div>
