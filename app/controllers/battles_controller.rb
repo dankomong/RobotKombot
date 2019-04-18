@@ -20,7 +20,6 @@ end
 
 
 
-
 private
 
 def battle_params
