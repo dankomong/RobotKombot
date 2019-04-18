@@ -1,0 +1,12 @@
+<%=  @character.errors.full_messages%>
+
+<div class="text-center">
+<%= form_for @character do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit%>
+<% end %>
+</div>
+
+
+ <%= button_to "delete", @character, :method => :delete %>
