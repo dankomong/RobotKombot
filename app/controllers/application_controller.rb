@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  helper_method :logged_in
 
   def authorized?
     redirect_to new_session_path unless logged_in

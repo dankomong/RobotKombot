@@ -39,13 +39,9 @@
             <a class="nav-link" href="/bosses">Bosses</a>
           </li>
         </ul>
-        <%= link_to "Logout", logout_path(session[:user_id]), method: :delete %>
+        <%= link_to "LOGOUT", logout_path(session[:user_id]), method: :delete %>
       </div>
     </nav>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Log in", new_session_path %>
-
 
     <% end %>
     <%= yield %>
