@@ -1,4 +1,7 @@
-<%=  @character.errors.full_messages%>
+<% @character.errors.full_messages.each do |error|%>
+<%= error %>
+<% end %>
+
 
 <div class="text-center">
 <%= form_for @character do |f| %>
@@ -9,4 +12,4 @@
 </div>
 
 
- <%= button_to "delete", @character, :method => :delete %>
+<%= button_to "delete", @character, :method => :delete %>

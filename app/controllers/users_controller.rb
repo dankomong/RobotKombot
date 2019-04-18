@@ -15,6 +15,7 @@ before_action :authorized?, except: [:new, :create]
   def create
     @user  = User.create!(user_params)
     if @user.valid?
+      session[:user_id] = @user.id
       redirect_to jobs_path
     else
       render :new

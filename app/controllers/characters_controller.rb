@@ -8,13 +8,18 @@ class CharactersController < ApplicationController
   end
 
 
+  def show
+
+  end
+
   def new
     @character = Character.new
   end
 
-
   def create
-    @character = Character.create(character_params(:name))
+    @character = Character.new(character_params(:name, :job_id))
+    @character.user_id = session[:user_id]
+    @character.update_stats
     if @character.valid?
       redirect_to character_path(@character)
     else
@@ -23,12 +28,13 @@ class CharactersController < ApplicationController
   end
 
 
+
   def edit
   end
 
   def update
     @character.update(character_params(:name))
-    if character.valid?
+    if @character.valid?
       redirect_to character_path(@character)
     else
       render :edit
@@ -43,11 +49,11 @@ class CharactersController < ApplicationController
   end
 
 
-
-
-
-
   private
+
+
+
+
 
 
   def get_character_by_id

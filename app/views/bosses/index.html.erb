@@ -1,0 +1,18 @@
+<h1 class="text-center"> Bosses: </h1>
+<div class="row">
+
+  <% @bosses.each do |boss| %>
+    <div class="col">
+      <a class="job-link" href="/bosses/<%=boss.id%>">
+        <div class="image-overlay">
+          <img src= <%= boss.image_url %>
+          class="img-responsive"
+          height="470"
+          width="350" />
+          <div class="project-overlay">
+            <div class="text"> <%= boss.name %></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% end %>
