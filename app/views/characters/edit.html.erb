@@ -4,12 +4,13 @@
 
 
 <div class="text-center">
-<%= form_for @character do |f| %>
+<%= form_for @character, html: {class: "ui form new-user-form"} do |f| %>
+  <div class= "field">
   <%= f.label :name %>
   <%= f.text_field :name %>
+  </div>
   <%= f.submit%>
 <% end %>
+
+<%= button_to "Delete", @character, :method => :delete, class: "ui red button" %>
 </div>
-
-
-<%= button_to "delete", @character, :method => :delete %>

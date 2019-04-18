@@ -10,8 +10,11 @@
   <%= form_tag battle_path(@battle) do %>
     <input type="hidden" name="percent1" value= "<%= @percent1 %>" />
     <input type="hidden" name="percent2" value= "<%= @percent2 %>" />
-
-    <input type="submit" value="Attack" />
+    <% if @percent1.to_i <= 0 || @percent2.to_i <= 0 %>
+      <input type="submit" value="Attack" disabled />
+      <% else %>
+      <input type="submit" value="Attack" />
+      <% end %>
   <% end %>
 </div>
 
@@ -25,3 +28,14 @@
     <div class="w3-container w3-green" style="width:<%= @percent2 %>%"> <%= @percent2 %>%</div>
   </div>
 </div>
+<%if @percent1.to_i <= 0 && @percent2.to_i <= 0 %>
+<%= "ISSA TIE" %>
+<% elsif @percent1.to_i <= 0 %>
+<%= "YOU LOST" %>
+<% elsif @percent2.to_i <= 0 %>
+<%= "YOU WON!" %>
+<% end %>
+
+
+
+<%= button_to "Back To Your Roster", characters_path, :method => :get %>

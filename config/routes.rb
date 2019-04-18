@@ -8,7 +8,7 @@ resources :characters
 resources :jobs
 resources :sessions, only: [:new, :create]
 resources :users
-resources :battles, only: [:show]
+resources :battles, only: [:index, :new, :create, :show]
 resources :bosses, only: [:index, :show]
 post '/battles/:id', to: 'battles#fight'
 delete '/sessions/:id', to: 'sessions#destroy', as: "logout"

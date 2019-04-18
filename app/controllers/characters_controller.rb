@@ -21,10 +21,14 @@ class CharactersController < ApplicationController
   end
 
   def create
+    # @user = User.find(session[:user_id])
+    #
+    # if @user.characters.count > 4
+    #   redirect_to characters_path
     @character = Character.new(character_params(:name, :job_id))
     @character.user_id = session[:user_id]
     @character.update_stats
-    if @character.valid?
+  if @character.valid?
       redirect_to character_path(@character)
     else
       render :new
