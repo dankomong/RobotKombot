@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <% if !!session[:user_id] %>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">RombotKombot</a>
@@ -38,11 +39,15 @@
             <a class="nav-link" href="/bosses">Bosses</a>
           </li>
         </ul>
-        <a class="nav-link" href="#">Logout</a>
+        <%= link_to "Logout", logout_path(session[:user_id]), method: :delete %>
       </div>
     </nav>
-    <div class = "container">
-      <%= yield %>
-    </div>
+    <% else %>
+      <%= link_to "Sign up", new_user_path %>
+      <%= link_to "Log in", new_session_path %>
+
+
+    <% end %>
+    <%= yield %>
 </body>
 </html>

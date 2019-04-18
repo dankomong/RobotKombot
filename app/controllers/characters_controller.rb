@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
 
   before_action :get_character_by_id, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
 
   def index

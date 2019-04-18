@@ -1,4 +1,5 @@
 class BossesController < ApplicationController
+  before_action :authorized?
 
   def index
     @bosses = Boss.all

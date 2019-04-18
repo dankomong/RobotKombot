@@ -15,10 +15,6 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-
-
-
-
   def log_out
     session[:user_id] = nil
   end
