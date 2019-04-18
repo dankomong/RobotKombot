@@ -1,0 +1,12 @@
+<div class="text-center">
+  <%= form_for @battle, method: :post, html: {class: "ui form new-user-form"} do |f| %>
+    <div class = "field">
+      <%= f.label "Your Character" %>
+      <%= f.hidden_field :character_id, value: @character.id %>
+      <p> Name: <%= @character.name %> </p>
+      <%= f.collection_select :boss_id, Boss.all, :id, :name %>
+    </div>
+
+    <%= f.submit  %>
+  <% end %>
+</div>

@@ -40,6 +40,6 @@
     <%= link_to "Edit this character", edit_character_path(@character), :class => "btn-create" %>
   </button>
   <button class="ui blue button">
-    <%= link_to "Start Battle", characters_path, :class => "btn-create" %>
+    <%= link_to "Start Battle", new_battle_path(battle: {character_id: @character.id}), :class => "btn-create" %>
   </button>
 </div>

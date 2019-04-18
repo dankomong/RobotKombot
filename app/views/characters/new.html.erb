@@ -5,10 +5,12 @@
 
 
 <div class="text-center">
-  <%= form_for @character do |f| %>
+  <%= form_for @character, html: {class: "ui form new-user-form"} do |f| %>
+    <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.collection_select :job_id, Job.all, :id, :name %>
+    </div>
 
     <%= f.submit %>
   <% end %>

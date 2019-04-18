@@ -6,8 +6,13 @@ def index
   @battles = Battle.all
 end
 
-def show
+def new
+  @battle = Battle.new(params[:id])
+  @character = Character.find(params[:battle][:character_id])
+  @battle.character_id = @character.id
+end
 
+def show
   @battle = Battle.find(params[:id])
   @percent1 = "100"
   @percent2 = "100"
@@ -16,7 +21,8 @@ def show
 end
 
 def create
-  @battle = Battle.create(battle_params)
+  @battle = Battle.create(battle_params(:character_id, :boss_id))
+  redirect_to battle_path(@battle)
 end
 
 def fight
@@ -36,8 +42,8 @@ end
 
 private
 
-def battle_params
-  params.require(:battle).permit(:name, :victory, :boss_id, :character)
+def battle_params(*args)
+  params.require(:battle).permit(*args)
 end
 
 
