@@ -3,7 +3,7 @@
  <% end %>
 
 <div class = "text-center">
-<% if !!session[:user_id] %>
+<% if logged_in %>
   <p> You're already logged in! </p>
 <% else %>
   <h1> Login </h1>
