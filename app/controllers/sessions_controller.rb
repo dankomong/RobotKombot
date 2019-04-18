@@ -6,12 +6,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+      sessions[:user_id] = @user.id
       redirect_to jobs_path
-
     # else
     #   flash["errors"] = ["Your username or password was incorrect"]
     #   redirect_to new_login_path
@@ -20,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to characters_path
+    redirect_to new_session_path
   end
 
 end

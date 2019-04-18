@@ -37,7 +37,7 @@
     <%= link_to "Back to characters", characters_path, :class => "btn-create" %>
   </button>
   <button class="ui orange button char-btn">
-    <%= link_to "Edit this character", characters_path, :class => "btn-create" %>
+    <%= link_to "Edit this character", edit_character_path(@character), :class => "btn-create" %>
   </button>
   <button class="ui blue button">
     <%= link_to "Start Battle", characters_path, :class => "btn-create" %>
