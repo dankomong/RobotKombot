@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # resources :characters, only: [:index]
   # resources :jobs
   # resources :users
-  resources :characters, only: [:index, :new, :show, :create]
-  resources :jobs, only: [:index, :show]
-  resources :login
+  resources :characters
+  resources :jobs
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

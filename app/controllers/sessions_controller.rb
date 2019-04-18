@@ -1,8 +1,4 @@
-class LoginController < ApplicationController
-
-def index
-@users = User.all
-end
+class SessionsController < ApplicationController
 
 
   def new
@@ -10,15 +6,15 @@ end
   end
 
   def create
-    byebug
+
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to jobs_path
 
-    else
-      flash["errors"] = ["Your username or password was incorrect"]
-      redirect_to new_login_path
+    # else
+    #   flash["errors"] = ["Your username or password was incorrect"]
+    #   redirect_to new_login_path
     end
   end
 
