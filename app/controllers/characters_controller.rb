@@ -10,15 +10,14 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @job = Job.find(params[:character][:job_id])
+    @character.job_id = @job.id
   end
 
   def show
 
   end
 
-  def new
-    @character = Character.new
-  end
 
   def create
     # @user = User.find(session[:user_id])

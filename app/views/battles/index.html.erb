@@ -1,23 +1,26 @@
 <div class="text-center">
-<% @battles.each do |battle| %>
-  <%= battle.victory %>
-  <div class="ui placeholder segment">
-    <div class="ui two column stackable center aligned grid">
-      <div class="ui vertical divider">VS</div>
-      <div class="middle aligned row">
-        <div class="column">
-          <div class="ui icon header">
-            <img src="<%=battle.character.image_url %>" />
+<% if @battles.empty? %>
+    <h1> You got no battles! </h1>
+<% else %>
+  <% @battles.each do |battle| %>
+    <%= battle.victory %>
+    <div class="ui placeholder segment">
+      <div class="ui two column stackable center aligned grid">
+        <div class="ui vertical divider">VS</div>
+        <div class="middle aligned row">
+          <div class="column">
+            <div class="ui icon header">
+              <img src="<%=battle.character.image_url %>" />
+            </div>
           </div>
-        </div>
-        <div class="column">
-          <div class="ui icon header">
-            <img src="<%=battle.boss.image_url%>" />
+          <div class="column">
+            <div class="ui icon header">
+              <img src="<%=battle.boss.image_url%>" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  <% end %>
 <% end %>
 </div>
