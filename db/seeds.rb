@@ -99,7 +99,3 @@ Character.create!(
 boss1 = Boss.create(name: "Sabrinella", hp: 500, level: 2, physical_damage: 13, magical_damage: 5, armor: 10, weaknesses: "Goldfish crackers", image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Sephiroth.png/220px-Sephiroth.png")
 boss2 = Boss.create(name: "Mother of Sabrinella", hp: 1000, level: 3, physical_damage: 23, magical_damage: 20, armor: 20, weaknesses: "dirty dishes in the sink", image_url: "https://static.tvtropes.org/pmwiki/pub/images/mm35_pg181.png")
 boss3 = Boss.create(name: "Eric Kim", hp: 3000, level: 4, physical_damage: 43, magical_damage: 30, armor: 30, weaknesses: "Mod 2", image_url: "/assets/erickimboss.png")
-
-
-battle1 = Battle.create!(name: "Test Battle", victory: "yes", boss_id: 1, character_id: 1)
-battle2 = Battle.create!(name: "Test Battle", victory: "yes", boss_id: 3, character_id: 1)
