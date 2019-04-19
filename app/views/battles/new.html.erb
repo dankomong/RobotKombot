@@ -4,6 +4,7 @@
       <%= f.label "Your Character" %>
       <%= f.hidden_field :character_id, value: @character.id %>
       <p> Name: <%= @character.name %> </p>
+      <p> Choose your boss </p>
       <%= f.collection_select :boss_id, Boss.all, :id, :name %>
     </div>
 

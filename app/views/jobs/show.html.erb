@@ -24,7 +24,7 @@
 
     <div class="ui button teal" tabindex="0">
       <div class="visible content">
-        <%= link_to 'Create a character in this class', new_character_path, :class => "btn-create" %>
+        <%= link_to 'Create a character in this class', new_character_path(character: {job_id: @job.id}), :class => "btn-create" %>
       </div>
     </div>
   </div>

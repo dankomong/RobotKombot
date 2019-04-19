@@ -3,7 +3,7 @@ class BattlesController < ApplicationController
 
 
   def index
-    @battles = Battle.all
+    @battles = Battle.all.order(created_at: :desc)
   end
 
   def new
@@ -21,7 +21,7 @@ class BattlesController < ApplicationController
   end
 
   def create
-    @battle = Battle.create(battle_params(:character_id, :boss_id))
+    @battle = Battle.create(battle_params(:victory, :character_id, :boss_id))
     redirect_to battle_path(@battle)
   end
 

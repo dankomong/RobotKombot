@@ -3,15 +3,22 @@
   <%= error %>
   <% end %>
 
-
 <div class="text-center">
-  <%= form_for @character, html: {class: "ui form new-user-form"} do |f| %>
+  <%= form_for @character, method: :post, html: {class: "ui form new-user-form"} do |f| %>
     <div class="field">
+    <%= f.label "Your Selected Job:" %>
+    <%= f.hidden_field :job_id, value: @job.id %>
+    <p> <%= @job.name %> </p>
+    <p> Enter the name of your character: </p>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.collection_select :job_id, Job.all, :id, :name %>
     </div>
 
     <%= f.submit %>
   <% end %>
+
+  <button class="ui icon teal button char-btn" style="margin-top: 10px">
+    <%= link_to "Back to characters", jobs_path, :class => "btn-create" %>
+  </button>
+
 </div>
